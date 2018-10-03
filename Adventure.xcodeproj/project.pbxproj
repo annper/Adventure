@@ -66,11 +66,11 @@
 		D12598702165059B0027065D /* Adventure */ = {
 			isa = PBXGroup;
 			children = (
+				D125989A216516F60027065D /* Storyboards */,
 				D1259895216512630027065D /* ViewControllers */,
 				D125988621650C420027065D /* Common */,
 				D125988321650BB80027065D /* Utils */,
 				D12598712165059B0027065D /* AppDelegate.swift */,
-				D12598752165059B0027065D /* Main.storyboard */,
 				D12598782165059C0027065D /* Assets.xcassets */,
 				D125987A2165059C0027065D /* LaunchScreen.storyboard */,
 				D125987D2165059C0027065D /* Info.plist */,
@@ -120,6 +120,14 @@
 				D1259898216513090027065D /* StartMenuVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D125989A216516F60027065D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D12598752165059B0027065D /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
