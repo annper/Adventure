@@ -84,10 +84,10 @@
                                 <rect key="frame" x="50" y="70" width="275" height="547"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="vfI-Kf-y7Y">
-                                        <rect key="frame" x="63.5" y="141.5" width="148" height="264"/>
+                                        <rect key="frame" x="63.5" y="136.5" width="148" height="274"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xKA-pV-3yA">
-                                                <rect key="frame" x="0.0" y="0.0" width="148" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="69"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gY1-pf-9Iz">
                                                         <rect key="frame" x="0.0" y="0.0" width="148" height="24"/>
@@ -96,7 +96,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bill" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UUD-ng-UzI">
-                                                        <rect key="frame" x="0.0" y="34" width="148" height="30"/>
+                                                        <rect key="frame" x="0.0" y="34" width="148" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="dgZ-kZ-769"/>
+                                                        </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -107,7 +110,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qtp-06-xSs">
-                                                <rect key="frame" x="9" y="114" width="130.5" height="64"/>
+                                                <rect key="frame" x="9" y="119" width="130.5" height="69"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lives (re-tries)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-om-1UC">
                                                         <rect key="frame" x="0.0" y="0.0" width="130.5" height="24"/>
@@ -116,7 +119,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Gk-6u-Bb0">
-                                                        <rect key="frame" x="0.0" y="34" width="130.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="34" width="130.5" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="jBF-So-pF5"/>
+                                                        </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -127,11 +133,14 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-sv-Y6C">
-                                                <rect key="frame" x="42" y="228" width="64" height="36"/>
+                                                <rect key="frame" x="42" y="238" width="64" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="START">
                                                     <color key="titleColor" red="0.3842130849" green="1" blue="0.1067969438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="FA4-GJ-ieQ" kind="presentation" id="lS4-bk-f6B"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -156,6 +165,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obU-tI-T0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896.79999999999995" y="133.5832083958021"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="DRm-b6-DCN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" referencedIdentifier="Game" id="FA4-GJ-ieQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gol-yX-Y35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1523" y="255"/>
         </scene>
     </scenes>
 </document>
