@@ -7,6 +7,7 @@
 //
 
 // Save progress as json
+
 class BaseDataManager {
   
 }

@@ -17,10 +17,35 @@ import UIKit
 
 class GameVC: UIViewController {
   
+  @IBOutlet var storyContainerView: UIView!
+  
+  @IBOutlet var menuContainerView: UIView!
+  
+  @IBOutlet var testtextField: UITextField!
+  private lazy var textDisplayVC: TextDisplayVC = {
+    let temp = TextDisplayVC(typePace: 0.01, font: UIFont(name: "HelveticaNeue-Thin", size: 14)!, textColor: Globals.Color.mainText)
+    
+    return temp
+  }()
+  
+  @IBAction func didTapTestButton(_ sender: Any) {
+    Logger.info("didTapTestButton")
+    
+    let text = testtextField.text ?? ""
+    textDisplayVC.display(text)
+    
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
     
     Logger.info("GameVC")
+    add(textDisplayVC, to: storyContainerView)
+//    storyContainerView.add(textDisplayVC.view)
+
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
   }
   
   override func didReceiveMemoryWarning() {

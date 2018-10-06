@@ -22,6 +22,11 @@
 		D125989E216517AB0027065D /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D125989D216517AB0027065D /* GameVC.swift */; };
 		D12598A121651A0D0027065D /* InteractionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598A021651A0D0027065D /* InteractionMenuVC.swift */; };
 		D12598A621651DAD0027065D /* BaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598A521651DAD0027065D /* BaseDataManager.swift */; };
+		D12598A92168EAAD0027065D /* TextDisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598A82168EAAD0027065D /* TextDisplayVC.swift */; };
+		D12598AB2168ECAF0027065D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598AA2168ECAF0027065D /* Globals.swift */; };
+		D12598AE2168F6330027065D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598AD2168F6330027065D /* UIViewController.swift */; };
+		D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12598AF2169065A0027065D /* TextDisplayCell.xib */; };
+		D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598B1216906A80027065D /* TextDisplayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		D125989D216517AB0027065D /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		D12598A021651A0D0027065D /* InteractionMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionMenuVC.swift; sourceTree = "<group>"; };
 		D12598A521651DAD0027065D /* BaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataManager.swift; sourceTree = "<group>"; };
+		D12598A82168EAAD0027065D /* TextDisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayVC.swift; sourceTree = "<group>"; };
+		D12598AA2168ECAF0027065D /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		D12598AD2168F6330027065D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D12598AF2169065A0027065D /* TextDisplayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayCell.xib; sourceTree = "<group>"; };
+		D12598B1216906A80027065D /* TextDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 		D12598702165059B0027065D /* Adventure */ = {
 			isa = PBXGroup;
 			children = (
+				D12598AC2168F6220027065D /* Extensions */,
 				D12598A421651D800027065D /* DataManagers */,
 				D12598A221651D620027065D /* Resources */,
 				D125989A216516F60027065D /* Storyboards */,
@@ -91,6 +102,7 @@
 		D125988321650BB80027065D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D12598AA2168ECAF0027065D /* Globals.swift */,
 				D125988421650BD20027065D /* Logger.swift */,
 			);
 			path = Utils;
@@ -99,6 +111,7 @@
 		D125988621650C420027065D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D12598A72168EA3C0027065D /* TextDisplayView */,
 				D125989F216519E30027065D /* InteractionMenu */,
 				D125988E21650EBD0027065D /* SideMenu */,
 				D125988921650C8D0027065D /* TableView */,
@@ -174,6 +187,24 @@
 			path = DataManagers;
 			sourceTree = "<group>";
 		};
+		D12598A72168EA3C0027065D /* TextDisplayView */ = {
+			isa = PBXGroup;
+			children = (
+				D12598A82168EAAD0027065D /* TextDisplayVC.swift */,
+				D12598AF2169065A0027065D /* TextDisplayCell.xib */,
+				D12598B1216906A80027065D /* TextDisplayCell.swift */,
+			);
+			path = TextDisplayView;
+			sourceTree = "<group>";
+		};
+		D12598AC2168F6220027065D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D12598AD2168F6330027065D /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,6 +266,7 @@
 				D125987C2165059C0027065D /* LaunchScreen.storyboard in Resources */,
 				D12598792165059C0027065D /* Assets.xcassets in Resources */,
 				D125989321650F160027065D /* SideMenuVC.xib in Resources */,
+				D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */,
 				D125989C216517840027065D /* Game.storyboard in Resources */,
 				D12598772165059B0027065D /* StartMenu.storyboard in Resources */,
 			);
@@ -247,14 +279,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D12598A92168EAAD0027065D /* TextDisplayVC.swift in Sources */,
 				D1259897216512910027065D /* NewGameVC.swift in Sources */,
 				D125988B21650CA60027065D /* TableViewDataSource.swift in Sources */,
 				D125989E216517AB0027065D /* GameVC.swift in Sources */,
 				D125989421650F160027065D /* SideMenuVC.swift in Sources */,
 				D125988521650BD20027065D /* Logger.swift in Sources */,
 				D12598A121651A0D0027065D /* InteractionMenuVC.swift in Sources */,
+				D12598AE2168F6330027065D /* UIViewController.swift in Sources */,
 				D12598722165059B0027065D /* AppDelegate.swift in Sources */,
+				D12598AB2168ECAF0027065D /* Globals.swift in Sources */,
 				D125988D21650DAD0027065D /* TableViewDelegate.swift in Sources */,
+				D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */,
 				D12598A621651DAD0027065D /* BaseDataManager.swift in Sources */,
 				D1259899216513090027065D /* StartMenuVC.swift in Sources */,
 			);
