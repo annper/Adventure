@@ -8,23 +8,39 @@
 
 import UIKit
 
-/*
- * - Display text at a set pace
- * - Display text of certain colour
- * - Add text at bottom of view
- * - Scroll view down as new text is added
- * - Add text of different font
+protocol TextDisplayDelegate {
+  func didFinishDisplayingText(with item: TextCellItem)
+}
+/**
+ * A scrolling view that can display text by typing it out one character at a time.
+ * Added text is always added at the bottom of the view.
+ * - Color and font can be set on individual text snippets.
+ * - Add this VC to your view and call func display(_ text: String, finished: (() -> Void)? = nil) to start displaying text
+ * - Optionally use the delegate TextDisplayDelegate to monitor when the last pice of text finished displaying
  */
 class TextDisplayVC: UIViewController {
   
-  private var tableView: UITableView!
-  
-  private lazy var factory = TextDisplayFactory(backgroundColor: self.backgroundColor)
+  @IBOutlet var tableView: UITableView! { didSet {
+    tableView.backgroundColor = self.backgroundColor
+    tableView.tableFooterView = UIView()
+    tableView.allowsSelection = false
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 44
+    tableView.separatorStyle = .none
+    tableView.isScrollEnabled = true
+    tableView.register(UINib.init(nibName: "TextDisplayCell", bundle: nil), forCellReuseIdentifier: TextCellItem.reuseIdentifier)
+    self.tableView.dataSource = self.dataSource
+    self.tableView.delegate = self.tableDelegate
+  }}
   
   private var backgroundColor: UIColor = UIColor.black
   private var typePace: Double = 0.5
   private var font: UIFont = UIFont(name: "HelveticaNeue-Thin", size: 14)!
   private var textColor: UIColor = UIColor.white
+  private var models: [TextCellItem] {
+    return dataSource.models
+  }
+  private var delegate: TextDisplayDelegate?
   
   private var lastId: Int = 0
   private var isTyping: Bool = false
@@ -37,29 +53,14 @@ class TextDisplayVC: UIViewController {
     self.backgroundColor = backgroundColor
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    self.tableView = factory.createTableView()
-    self.tableView.dataSource = self.dataSource
-    self.tableView.delegate = self.tableDelegate
-    
-    self.view.addSubview(tableView)
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-    tableView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
-  }
-  
   private lazy var dataSource: TableViewDataSource<TextCellItem> = {
     let temp = TableViewDataSource(models: [TextCellItem](), reuseIdentifier: TextCellItem.reuseIdentifier, cellConfigurator: { (item, cell) in
       
       let displayCell = cell as! TextDisplayCell
+      displayCell.label.isHidden = self.models.count == item.id
       displayCell.label.text = item.text
-      displayCell.label.font = self.font
-      displayCell.label.textColor = self.textColor
+      displayCell.label.font = item.font
+      displayCell.label.textColor = item.textColor
       
     })
     
@@ -68,7 +69,7 @@ class TextDisplayVC: UIViewController {
   
   private lazy var tableDelegate: TableViewDelegate<TextCellItem> = {
     let temp = TableViewDelegate<TextCellItem>(selectedRow: { (item) in
-      Logger.info("Tapped cell with text: \(item.text)")
+      Logger.info("Tapped cell with id: \(item.id)")
     })
     
     return temp
@@ -105,29 +106,38 @@ extension TextDisplayVC {
   /// - parameter text: The full text to display
   /// - parameter finished: If supplied, this is called once the text has finished being printed in full
   public func display(_ text: String, finished: (() -> Void)? = nil) {
-    Logger.info("Attempt to dispaly text: \(text)")
-    var text = "This is a superlong text with lots to say and also some line breaks\n\n\nThere that was a broken\nline and then some dots .......\n...\n......"
+    let text = "This is a superlong text with lots to say and also some line breaks\n\n\nThere that was a broken\nline and then some dots .......\n...\n......"
     
     // Only dispaly the next item if the last one has finished being added
     if self.isTyping || text.isEmpty { return }
     self.isTyping = true
 
     // Add the new row and scroll to the bottom so its visible
-    self.addRowWith(text: text)
+    let addedItem = self.addRowWith(text: text)
     self.scrollToBottom()
     
-    // Retrieve the cell we just added to perform the text animation on it
-    guard let newlyAddedCell = self.bottomCell() else {
-      self.isTyping = false
-      return
-    }
-    
-    // Animate displaying the text
-    newlyAddedCell.display(text: text, atPace: self.typePace) {
-      self.isTyping = false
+    // Postpone typing out the text until the scroll to bottom aimation has finished
+    // Theres probably a better wa of doing this, but this was the most straight forward
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      let bottomCell = self.tableView.visibleCells.last as? TextDisplayCell
       
-      if let finished = finished {
-        finished()
+      // Retrieve the cell we just added to perform the text animation on it
+      guard let newlyAddedCell = bottomCell /*self.bottomCell()*/ else {
+        self.isTyping = false
+        return
+      }
+      
+      // Animate displaying the text
+      newlyAddedCell.display(text: text, atPace: self.typePace) {
+        self.isTyping = false
+        
+        if let finished = finished {
+          finished()
+        }
+        
+        if let delegate = self.delegate {
+          delegate.didFinishDisplayingText(with: addedItem)
+        }
       }
     }
     
@@ -139,10 +149,12 @@ extension TextDisplayVC {
 
 private extension TextDisplayVC {
   
-  func addRowWith(text: String) {
+  func addRowWith(text: String) -> TextCellItem {
     self.lastId += 1
-    dataSource.models.append(TextCellItem(text, id: self.lastId))
+    let newItem = TextCellItem(id: self.lastId, text: text, font: self.font, textColor: self.textColor)
+    dataSource.models.append(newItem)
     tableView.reloadData()
+    return newItem
   }
   
   func scrollToBottom() {
@@ -150,19 +162,6 @@ private extension TextDisplayVC {
     let indexPath = IndexPath(row: bottomRowIndex, section: 0)
     self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
   }
-  
-  func bottomCell() -> TextDisplayCell? {
-    let bottomRowIndex = dataSource.models.count - 1
-    let indexPath = IndexPath(row: bottomRowIndex, section: 0)
-    return self.tableView.cellForRow(at: indexPath) as? TextDisplayCell
-  }
-  
-//  func configure(_ cell: TextDisplayCell, withItem item: TextCellItem) -> TextDisplayCell {
-//    cell.label.text = item.text
-//    cell.label.font = self.font
-//    cell.label.textColor = self.textColor
-//    return cell
-//  }
   
 }
 
@@ -172,38 +171,16 @@ class TextCellItem: Model {
   
   static let reuseIdentifier = "TextCellItem"
   
-  var text: String
   var id: Int
+  var text: String
+  var font: UIFont
+  var textColor: UIColor
   
-  init(_ text: String, id: Int) {
-    self.text = text
+  init(id: Int, text: String, font: UIFont, textColor: UIColor) {
     self.id = id
-  }
-  
-}
-
-// MARK: - TextDisplayFactory
-
-class TextDisplayFactory {
-  
-  private let backgroundColor: UIColor!
-  
-  init(backgroundColor: UIColor) {
-    self.backgroundColor = backgroundColor
-  }
-  
-  func createTableView() -> UITableView {
-    let tableView = UITableView()
-    
-    tableView.backgroundColor = self.backgroundColor
-    tableView.tableFooterView = UIView()
-    tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 44
-    tableView.separatorStyle = .none
-    tableView.isScrollEnabled = true
-    tableView.register(UINib.init(nibName: "TextDisplayCell", bundle: nil), forCellReuseIdentifier: TextCellItem.reuseIdentifier)
-    
-    return tableView
+    self.text = text
+    self.font = font
+    self.textColor = textColor
   }
   
 }

@@ -51,28 +51,16 @@ extension UIViewController {
     self.addChildViewController(child)
     view.addSubview(child.view)
     
-    child.view.frame = view.frame
-    child.view.center = view.center
+    child.view.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      child.view.topAnchor.constraint(equalTo: view.topAnchor),
+      child.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      child.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+      child.view.rightAnchor.constraint(equalTo: view.rightAnchor)
+    ])
     
     child.didMove(toParentViewController: self)
   }
-  
-//
-//  func addAndInform(childViewController: UIViewController, toView view: UIView, topInset: CGFloat = 0) {
-//
-//    childViewController.willMove(toParentViewController: self)
-//
-//    self.addChildViewController(childViewController)
-//    view.addSubview(childViewController.view)
-//
-//    constrain(childViewController.view, view) { childViewControllerView, view in
-//      childViewControllerView.leading == view.leading
-//      childViewControllerView.trailing == view.trailing
-//      childViewControllerView.top == view.top + topInset
-//      childViewControllerView.bottom == view.bottom
-//    }
-//
-//    childViewController.didMove(toParentViewController: self)
-//  }
   
 }

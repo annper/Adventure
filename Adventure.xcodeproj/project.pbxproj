@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D11F6B74216A0FF4002813D0 /* TextDisplayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11F6B73216A0FF4002813D0 /* TextDisplayVC.xib */; };
 		D12598722165059B0027065D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598712165059B0027065D /* AppDelegate.swift */; };
 		D12598772165059B0027065D /* StartMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12598752165059B0027065D /* StartMenu.storyboard */; };
 		D12598792165059C0027065D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D12598782165059C0027065D /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D11F6B73216A0FF4002813D0 /* TextDisplayVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayVC.xib; sourceTree = "<group>"; };
 		D125986E2165059B0027065D /* Adventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D12598712165059B0027065D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D12598762165059B0027065D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StartMenu.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				D12598A82168EAAD0027065D /* TextDisplayVC.swift */,
 				D12598AF2169065A0027065D /* TextDisplayCell.xib */,
 				D12598B1216906A80027065D /* TextDisplayCell.swift */,
+				D11F6B73216A0FF4002813D0 /* TextDisplayVC.xib */,
 			);
 			path = TextDisplayView;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				D125989321650F160027065D /* SideMenuVC.xib in Resources */,
 				D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */,
 				D125989C216517840027065D /* Game.storyboard in Resources */,
+				D11F6B74216A0FF4002813D0 /* TextDisplayVC.xib in Resources */,
 				D12598772165059B0027065D /* StartMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

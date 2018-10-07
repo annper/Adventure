@@ -9,7 +9,10 @@
 import UIKit
 
 class TextDisplayCell: UITableViewCell {
-    
+  
+  
+  
+  
   @IBOutlet var label: UILabel!
   
   /// Display the text on the label by typing out one character at a time
@@ -18,8 +21,9 @@ class TextDisplayCell: UITableViewCell {
   /// - parameter onCompletion: Function called once the full text has been shown
   func display(text: String, atPace pace: TimeInterval, onCompletion: (() -> Void)?) {
     
-    // Start by emptying the text label
+    // Start by emptying the text label and unhide it
     self.label.text = ""
+    self.label.isHidden = false
     
     // Add one character at a time
     let textArray = Array(text)

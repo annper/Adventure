@@ -40,8 +40,6 @@ class GameVC: UIViewController {
     
     Logger.info("GameVC")
     add(textDisplayVC, to: storyContainerView)
-//    storyContainerView.add(textDisplayVC.view)
-
   }
   
   override func viewWillAppear(_ animated: Bool) {
