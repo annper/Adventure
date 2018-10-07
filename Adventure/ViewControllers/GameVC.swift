@@ -23,7 +23,7 @@ class GameVC: UIViewController {
   
   @IBOutlet var testtextField: UITextField!
   private lazy var textDisplayVC: TextDisplayVC = {
-    let temp = TextDisplayVC(typePace: 0.01, font: UIFont(name: "HelveticaNeue-Thin", size: 14)!, textColor: Globals.Color.mainText)
+    let temp = TextDisplayVC(typePace: 0.01, font: UIFont(name: "HelveticaNeue-Thin", size: 14)!, textColor: Globals.Color.mainText, backgroundColor: Globals.Color.mainBackground)
     
     return temp
   }()

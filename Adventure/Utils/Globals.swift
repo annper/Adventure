@@ -28,7 +28,7 @@ extension Globals {
     static let menuBackground: UIColor = UIColor.darkGray
     
     /// UIColor.black (#000000)
-    static let mainBackground: UIColor = UIColor.blue
+    static let mainBackground: UIColor = UIColor.black
   }
   
 }

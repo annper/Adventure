@@ -9,7 +9,7 @@
 import UIKit
 
 class TextDisplayCell: UITableViewCell {
-  
+    
   @IBOutlet var label: UILabel!
   
   /// Display the text on the label by typing out one character at a time
@@ -26,6 +26,7 @@ class TextDisplayCell: UITableViewCell {
     var i = 0
     Timer.scheduledTimer(withTimeInterval: pace, repeats: true) { (timer) in
       self.label.text?.append(textArray[i])
+      
       i += 1
       if i == textArray.count {
         timer.invalidate()
