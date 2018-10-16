@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Delegates for the different interactions
+// MARK: - Delegates for the different interactions
 
 protocol InteractionMenuDirectionsDelegate {
   func didMoveForward()
@@ -44,6 +44,14 @@ extension InteractionMenuActionDelegate {
 
 class InteractionMenuVC: UIViewController {
   
+  // MARK: - Public properties
+  
+  public var inventoryDelegate: InteractionMenuInventoryDelegate?
+  public var actionDelegate: InteractionMenuActionDelegate?
+  public var directionsDelegate: InteractionMenuDirectionsDelegate?
+  
+  // MARK: - Private properties
+  
   /// Holds all buttons in the menu so to easily apply changes to all at the same time
   private lazy var allButtons: [MenuButton] = {
     return [
@@ -54,21 +62,52 @@ class InteractionMenuVC: UIViewController {
     ]
   }()
   
+  // MARK: - IBOutlets
+  
   @IBOutlet var containerView: UIView!
   
-  @IBOutlet var mainMenuStackView: UIStackView!
+  @IBOutlet var mainMenuStackView: UIStackView! { didSet {
+    self.mainMenuStackView.distribution = .equalSpacing
+    self.mainMenuStackView.spacing = 0
+  }}
   
-  @IBOutlet var interactButton: MenuButton! { didSet {
+  @IBOutlet var interactButton: MainMenuButton! { didSet {
     self.interactButton.backgroundColor = self.containerView.backgroundColor
   }}
   
-  @IBOutlet var inventoryButton: MenuButton! { didSet {
+  @IBOutlet var inventoryButton: MainMenuButton! { didSet {
     self.inventoryButton.backgroundColor = self.containerView.backgroundColor
   }}
   
-  @IBOutlet var moveButton: MenuButton! { didSet {
+  @IBOutlet var moveButton: MainMenuButton! { didSet {
     self.moveButton.backgroundColor = self.containerView.backgroundColor
   }}
+  
+  // MARK: - IBActions
+  
+  @IBAction func didTapInteractButton(_ sender: MenuButton) {
+    Logger.info("didTapInteractButton")
+  }
+  
+  @IBAction func didTapInventoryButton(_ sender: MenuButton) {
+    Logger.info("didTapInventoryButton")
+    
+    // TODO: - Close inventory, notify delegate, add smooth animation between state
+    self.hideMainMenuButtons()
+    self.inventoryButton.isHidden = false
+    
+    self.setInventoryTitle(to: "X Close")
+    
+    if let delegate = inventoryDelegate {
+      delegate.didOpenInventory()
+    }
+  }
+  
+  @IBAction func didTapMoveButton(_ sender: MenuButton) {
+    Logger.info("didTapMoveButton")
+  }
+  
+  // MARK: - UIViewController
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -82,6 +121,8 @@ class InteractionMenuVC: UIViewController {
   }
   
 }
+
+// MARK: - Properties API
 
 extension InteractionMenuVC {
   
@@ -121,6 +162,12 @@ extension InteractionMenuVC {
   func setInteractTitle(to title: String) {
     self.interactButton.setTitle(title, for: .normal)
   }
+
+}
+
+// MARK: - Remove/Add main menu buttons
+
+extension InteractionMenuVC {
   
   /// Remove one of the main manu buttons from the menu
   func removeMainMenuOption(_ option: MainMenuOption) {
@@ -172,8 +219,18 @@ extension InteractionMenuVC {
     case move
   }
   
-//
-//  enum Direction {
-//    case forward, back, left, right
-//  }
+}
+
+/// MARK: - Private methods
+
+internal extension InteractionMenuVC {
+  
+  func hideMainMenuButtons() {
+    self.allButtons.forEach { (button) in
+      
+      if let mainMenuButton = button as? MainMenuButton {
+        mainMenuButton.isHidden = true
+      }
+    }
+  }
 }

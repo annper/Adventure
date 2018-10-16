@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuButton: UIButton {
-  
+    
   override func awakeFromNib() {
     
     // Set background colour if one is available
@@ -47,4 +47,8 @@ private extension MenuButton {
     
     return parentView.backgroundColor
   }
+}
+
+class MainMenuButton: MenuButton {
+  
 }

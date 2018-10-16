@@ -168,6 +168,8 @@
 		D125989F216519E30027065D /* InteractionMenu */ = {
 			isa = PBXGroup;
 			children = (
+				D12E314221769F1E00DE4053 /* MoveMenu */,
+				D12E314121769EFA00DE4053 /* InteractMenu */,
 				D12598A021651A0D0027065D /* InteractionMenuVC.swift */,
 				D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */,
 				D12E3127217613CF00DE4053 /* MenuButton.swift */,
@@ -223,6 +225,20 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D12E314121769EFA00DE4053 /* InteractMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InteractMenu;
+			sourceTree = "<group>";
+		};
+		D12E314221769F1E00DE4053 /* MoveMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoveMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
