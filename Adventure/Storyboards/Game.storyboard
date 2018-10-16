@@ -24,33 +24,8 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-7P-CJ6">
                                 <rect key="frame" x="0.0" y="517" width="375" height="150"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzH-oB-bZR">
-                                        <rect key="frame" x="170" y="60" width="34" height="30"/>
-                                        <state key="normal" title="Test!">
-                                            <color key="titleColor" red="0.3842130849" green="1" blue="0.1067969438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTapTestButton:" destination="SW6-dS-2En" eventType="touchUpInside" id="K7m-Vm-l63"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I6T-ud-Kbr">
-                                        <rect key="frame" x="139" y="22" width="97" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Jhg-zh-eZN"/>
-                                            <constraint firstAttribute="width" constant="97" id="V6h-Nq-Dj8"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="DzH-oB-bZR" firstAttribute="top" secondItem="I6T-ud-Kbr" secondAttribute="bottom" constant="8" id="GWP-xU-j4D"/>
-                                    <constraint firstItem="DzH-oB-bZR" firstAttribute="centerY" secondItem="5ie-7P-CJ6" secondAttribute="centerY" id="N5d-VZ-aJX"/>
-                                    <constraint firstItem="DzH-oB-bZR" firstAttribute="centerX" secondItem="5ie-7P-CJ6" secondAttribute="centerX" id="jWd-NM-KpY"/>
-                                    <constraint firstItem="I6T-ud-Kbr" firstAttribute="centerX" secondItem="5ie-7P-CJ6" secondAttribute="centerX" id="oCl-xG-uhC"/>
                                     <constraint firstAttribute="height" constant="150" id="yDY-oJ-WbY"/>
                                 </constraints>
                             </view>
@@ -70,7 +45,6 @@
                     <connections>
                         <outlet property="menuContainerView" destination="5ie-7P-CJ6" id="kWY-2b-spf"/>
                         <outlet property="storyContainerView" destination="nbd-Fb-LZH" id="bAb-gF-1SV"/>
-                        <outlet property="testtextField" destination="I6T-ud-Kbr" id="c6r-af-rvA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29s-Zj-FC6" userLabel="First Responder" sceneMemberID="firstResponder"/>

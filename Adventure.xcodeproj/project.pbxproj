@@ -28,6 +28,9 @@
 		D12598AE2168F6330027065D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598AD2168F6330027065D /* UIViewController.swift */; };
 		D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12598AF2169065A0027065D /* TextDisplayCell.xib */; };
 		D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598B1216906A80027065D /* TextDisplayCell.swift */; };
+		D12E31212175EDD800DE4053 /* InteractionMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */; };
+		D12E31232175F35A00DE4053 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E31222175F35A00DE4053 /* Array.swift */; };
+		D12E3128217613CF00DE4053 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E3127217613CF00DE4053 /* MenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		D12598AD2168F6330027065D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D12598AF2169065A0027065D /* TextDisplayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayCell.xib; sourceTree = "<group>"; };
 		D12598B1216906A80027065D /* TextDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayCell.swift; sourceTree = "<group>"; };
+		D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InteractionMenuVC.xib; sourceTree = "<group>"; };
+		D12E31222175F35A00DE4053 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		D12E3127217613CF00DE4053 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		D125988321650BB80027065D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D12E31242175F8D500DE4053 /* Views */,
 				D12598AA2168ECAF0027065D /* Globals.swift */,
 				D125988421650BD20027065D /* Logger.swift */,
 			);
@@ -162,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				D12598A021651A0D0027065D /* InteractionMenuVC.swift */,
+				D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */,
+				D12E3127217613CF00DE4053 /* MenuButton.swift */,
 			);
 			path = InteractionMenu;
 			sourceTree = "<group>";
@@ -204,8 +213,16 @@
 			isa = PBXGroup;
 			children = (
 				D12598AD2168F6330027065D /* UIViewController.swift */,
+				D12E31222175F35A00DE4053 /* Array.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D12E31242175F8D500DE4053 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +287,7 @@
 				D12598792165059C0027065D /* Assets.xcassets in Resources */,
 				D125989321650F160027065D /* SideMenuVC.xib in Resources */,
 				D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */,
+				D12E31212175EDD800DE4053 /* InteractionMenuVC.xib in Resources */,
 				D125989C216517840027065D /* Game.storyboard in Resources */,
 				D11F6B74216A0FF4002813D0 /* TextDisplayVC.xib in Resources */,
 				D12598772165059B0027065D /* StartMenu.storyboard in Resources */,
@@ -289,11 +307,13 @@
 				D125989E216517AB0027065D /* GameVC.swift in Sources */,
 				D125989421650F160027065D /* SideMenuVC.swift in Sources */,
 				D125988521650BD20027065D /* Logger.swift in Sources */,
+				D12E31232175F35A00DE4053 /* Array.swift in Sources */,
 				D12598A121651A0D0027065D /* InteractionMenuVC.swift in Sources */,
 				D12598AE2168F6330027065D /* UIViewController.swift in Sources */,
 				D12598722165059B0027065D /* AppDelegate.swift in Sources */,
 				D12598AB2168ECAF0027065D /* Globals.swift in Sources */,
 				D125988D21650DAD0027065D /* TableViewDelegate.swift in Sources */,
+				D12E3128217613CF00DE4053 /* MenuButton.swift in Sources */,
 				D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */,
 				D12598A621651DAD0027065D /* BaseDataManager.swift in Sources */,
 				D1259899216513090027065D /* StartMenuVC.swift in Sources */,

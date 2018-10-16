@@ -33,16 +33,27 @@ class TextDisplayVC: UIViewController {
     self.tableView.delegate = self.tableDelegate
   }}
   
+  /// The TextDisplayViews background colour. Defaults to black
   private var backgroundColor: UIColor = UIColor.black
+  
+  /// The speed at which the text is written. Defaults to 0.5
   private var typePace: Double = 0.5
+  
+  /// The font to type the text in. Defaults to Helvetica-Thin, size 14
   private var font: UIFont = UIFont(name: "HelveticaNeue-Thin", size: 14)!
+  
+  /// The text colour to use. Defaults to white
   private var textColor: UIColor = UIColor.white
+  
   private var models: [TextCellItem] {
     return dataSource.models
   }
   private var delegate: TextDisplayDelegate?
   
+  /// The id of the last TextCellItem ti be added. Starts at 1
   private var lastId: Int = 0
+  
+  /// Indicates whether a typing animation is currently in progress
   private var isTyping: Bool = false
   
   convenience init(typePace: Double, font: UIFont, textColor: UIColor, backgroundColor: UIColor) {
@@ -57,7 +68,7 @@ class TextDisplayVC: UIViewController {
     let temp = TableViewDataSource(models: [TextCellItem](), reuseIdentifier: TextCellItem.reuseIdentifier, cellConfigurator: { (item, cell) in
       
       let displayCell = cell as! TextDisplayCell
-      displayCell.label.isHidden = self.models.count == item.id
+      displayCell.label.isHidden = self.models.count == item.id // Hide the text in the last added cell
       displayCell.label.text = item.text
       displayCell.label.font = item.font
       displayCell.label.textColor = item.textColor
@@ -106,9 +117,10 @@ extension TextDisplayVC {
   /// - parameter text: The full text to display
   /// - parameter finished: If supplied, this is called once the text has finished being printed in full
   public func display(_ text: String, finished: (() -> Void)? = nil) {
+    // Test text, should be removed
     let text = "This is a superlong text with lots to say and also some line breaks\n\n\nThere that was a broken\nline and then some dots .......\n...\n......"
     
-    // Only dispaly the next item if the last one has finished being added
+    // Only display the next item if the last one has finished being added
     if self.isTyping || text.isEmpty { return }
     self.isTyping = true
 
@@ -117,7 +129,7 @@ extension TextDisplayVC {
     self.scrollToBottom()
     
     // Postpone typing out the text until the scroll to bottom aimation has finished
-    // Theres probably a better wa of doing this, but this was the most straight forward
+    // Theres probably a better way of doing this, but this was the most straight forward
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
       let bottomCell = self.tableView.visibleCells.last as? TextDisplayCell
       
@@ -157,6 +169,7 @@ private extension TextDisplayVC {
     return newItem
   }
   
+  /// Scroll to the bottom of the TextDisplayView
   func scrollToBottom() {
     let bottomRowIndex = dataSource.models.count - 1
     let indexPath = IndexPath(row: bottomRowIndex, section: 0)

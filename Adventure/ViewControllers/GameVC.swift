@@ -28,6 +28,12 @@ class GameVC: UIViewController {
     return temp
   }()
   
+  private lazy var interactionMenuVC: InteractionMenuVC = {
+    let temp = InteractionMenuVC()
+    
+    return temp
+  }()
+  
   @IBAction func didTapTestButton(_ sender: Any) {
     Logger.info("didTapTestButton")
     
@@ -40,6 +46,7 @@ class GameVC: UIViewController {
     
     Logger.info("GameVC")
     add(textDisplayVC, to: storyContainerView)
+    add(interactionMenuVC, to: menuContainerView)
   }
   
   override func viewWillAppear(_ animated: Bool) {

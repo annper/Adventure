@@ -21,7 +21,7 @@ extension Globals {
   
   public struct Color {
     
-    /// #62FF1B
+    /// Neon green (#62FF1B)
     static let mainText: UIColor = UIColor(red: 0.384, green: 1, blue: 0.107, alpha: 1)
    
     /// UIColor.darkGray (#545454)
@@ -31,4 +31,21 @@ extension Globals {
     static let mainBackground: UIColor = UIColor.black
   }
   
+}
+
+// MARK: - Font
+
+extension Globals {
+  
+  public struct Font {
+    
+    static func helveticaNeueRegular(size: CGFloat) -> UIFont {
+      return UIFont(name: "HelveticaNeue-Regular", size: size)!
+    }
+    
+    static func rockwellRegular(size: CGFloat) -> UIFont {
+      return UIFont(name: "Rockwell", size: size)!
+    }
+    
+  }
 }
