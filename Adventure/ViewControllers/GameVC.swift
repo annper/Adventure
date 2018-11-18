@@ -29,7 +29,7 @@ class GameVC: UIViewController {
   }()
   
   private lazy var interactionMenuVC: InteractionMenuVC = {
-    let temp = InteractionMenuVC()
+    let temp = InteractionMenuVC(bgColor: Globals.Color.menuBackground)
     
     return temp
   }()
@@ -68,5 +68,17 @@ class GameVC: UIViewController {
    // Pass the selected object to the new view controller.
    }
    */
+  
+}
+
+extension GameVC: InteractionMenuInventoryDelegate {
+  
+  func didOpenInventory() {
+    
+  }
+  
+  func didCloseInventory() {
+    
+  }
   
 }

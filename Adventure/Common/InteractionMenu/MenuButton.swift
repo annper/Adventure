@@ -23,13 +23,14 @@ class MenuButton: UIButton {
     self.layer.borderWidth = 1
     
     // Set shadow
+    // TODO: - fix how this colour is set so it doesnt rely on globals
     self.layer.shadowColor = Globals.Color.mainBackground.cgColor
     self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
     self.layer.shadowOpacity = 1
     self.layer.shadowRadius = 0.0
     self.layer.masksToBounds = false
     
-    // Add padding wround text
+    // Add padding waound text
     let padding: CGFloat = 12
     self.contentEdgeInsets = UIEdgeInsetsMake(padding, padding, padding, padding)
     
@@ -50,5 +51,4 @@ private extension MenuButton {
 }
 
 class MainMenuButton: MenuButton {
-  
 }

@@ -10,9 +10,6 @@ import UIKit
 
 class TextDisplayCell: UITableViewCell {
   
-  
-  
-  
   @IBOutlet var label: UILabel!
   
   /// Display the text on the label by typing out one character at a time

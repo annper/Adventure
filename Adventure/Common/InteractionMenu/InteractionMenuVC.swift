@@ -30,7 +30,7 @@ protocol InteractionMenuActionDelegate {
   func didPickUp()
 }
 
-/// How tp make a protocol method optional
+/// How to make a protocol method optional
 extension InteractionMenuActionDelegate {
   func didPush() {}
 }
@@ -43,6 +43,13 @@ extension InteractionMenuActionDelegate {
 // - Inspect: Give info on surroundings
 
 class InteractionMenuVC: UIViewController {
+  
+  private var bgColor: UIColor = UIColor.gray
+  
+  convenience init(bgColor: UIColor) {
+    self.init()
+    self.bgColor = bgColor
+  }
   
   // MARK: - Public properties
   
@@ -57,14 +64,16 @@ class InteractionMenuVC: UIViewController {
     return [
       self.interactButton,
       self.inventoryButton,
-      self.moveButton
+      self.moveButton,
       // Add any new buttons here...
     ]
   }()
   
   // MARK: - IBOutlets
   
-  @IBOutlet var containerView: UIView!
+  @IBOutlet var containerView: UIView! { didSet {
+    self.containerView.backgroundColor = self.bgColor
+  }}
   
   @IBOutlet var mainMenuStackView: UIStackView! { didSet {
     self.mainMenuStackView.distribution = .equalSpacing
@@ -87,24 +96,33 @@ class InteractionMenuVC: UIViewController {
   
   @IBAction func didTapInteractButton(_ sender: MenuButton) {
     Logger.info("didTapInteractButton")
+    
+    // Opens the interaction menu
+    // - Talk, pull, push etc
   }
   
   @IBAction func didTapInventoryButton(_ sender: MenuButton) {
     Logger.info("didTapInventoryButton")
     
-    // TODO: - Close inventory, notify delegate, add smooth animation between state
-    self.hideMainMenuButtons()
-    self.inventoryButton.isHidden = false
+    // This opens a view that slides in from the bottom
+    // The GUI should be a list view of items. close button top right
+    // ------------------------ X
+    // id | img | title | status
+    // id | img | title | status
+    // -------------------------
+    // Tap on an item to see details or equip
     
-    self.setInventoryTitle(to: "X Close")
-    
-    if let delegate = inventoryDelegate {
+    if let delegate = self.inventoryDelegate {
       delegate.didOpenInventory()
     }
   }
   
   @IBAction func didTapMoveButton(_ sender: MenuButton) {
     Logger.info("didTapMoveButton")
+    
+    // Update options for possible moves
+    // Forward, up down, back
+    // Not all options need to be present at once
   }
   
   // MARK: - UIViewController
@@ -225,7 +243,9 @@ extension InteractionMenuVC {
 
 internal extension InteractionMenuVC {
   
-  func hideMainMenuButtons() {
+  /// Hide all the main buttons on the main menu
+  /// Note that this won't show the close button. That will need to be done separately
+  private func hideMainMenuButtons() {
     self.allButtons.forEach { (button) in
       
       if let mainMenuButton = button as? MainMenuButton {
@@ -233,4 +253,15 @@ internal extension InteractionMenuVC {
       }
     }
   }
+  
+  /// Show all the main buttons on the main menu. This also hides the close button
+  private func showMainMenuButton() {
+    self.allButtons.forEach { (button) in
+      if let mainMenuButton = button as? MainMenuButton {
+        mainMenuButton.isHidden = false
+      }
+    }
+  
+  }
+  
 }
