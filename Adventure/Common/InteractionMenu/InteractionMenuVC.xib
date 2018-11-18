@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InteractionMenuVC" customModule="Adventure" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="iZB-YP-QQP" id="12Y-iE-SIk"/>
+                <outlet property="interactButton" destination="qam-Qn-RMI" id="O6z-K3-lqV"/>
+                <outlet property="inventoryButton" destination="Sgi-Dz-DQa" id="U5p-0F-GPC"/>
+                <outlet property="mainMenuStackView" destination="SYG-r9-H87" id="TzP-b0-YDa"/>
+                <outlet property="moveButton" destination="bh5-Nv-dzo" id="CiZ-8u-MCM"/>
+                <outlet property="view" destination="Ip4-Oe-c0M" id="6ZW-lC-j4I"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ip4-Oe-c0M">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-YP-QQP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="SYG-r9-H87">
+                            <rect key="frame" x="40" y="110.5" width="295" height="29"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qam-Qn-RMI" customClass="MainMenuButton" customModule="Adventure" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="66" height="29"/>
+                                    <color key="backgroundColor" red="0.058823529409999999" green="0.33333333329999998" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                    <state key="normal" title="Interact">
+                                        <color key="titleColor" red="0.3842130849" green="1" blue="0.1067969438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didTapInteractButton:" destination="-1" eventType="touchUpInside" id="8Tw-nP-vVO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-Dz-DQa" customClass="MainMenuButton" customModule="Adventure" customModuleProvider="target">
+                                    <rect key="frame" x="115" y="0.0" width="83" height="29"/>
+                                    <color key="backgroundColor" red="0.058823529409999999" green="0.33333333329999998" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                    <state key="normal" title="Inventory">
+                                        <color key="titleColor" red="0.3842130849" green="1" blue="0.1067969438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didTapInventoryButton:" destination="-1" eventType="touchUpInside" id="BEa-Nr-mYH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bh5-Nv-dzo" customClass="MainMenuButton" customModule="Adventure" customModuleProvider="target">
+                                    <rect key="frame" x="247" y="0.0" width="48" height="29"/>
+                                    <color key="backgroundColor" red="0.058823529409999999" green="0.33333333329999998" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                    <state key="normal" title="Move">
+                                        <color key="titleColor" red="0.3842130849" green="1" blue="0.1067969438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didTapMoveButton:" destination="-1" eventType="touchUpInside" id="q4X-dz-C0D"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="SYG-r9-H87" firstAttribute="leading" secondItem="iZB-YP-QQP" secondAttribute="leading" constant="40" id="Ccv-Ws-eXX"/>
+                        <constraint firstAttribute="trailing" secondItem="SYG-r9-H87" secondAttribute="trailing" constant="40" id="SaZ-yv-vT4"/>
+                        <constraint firstItem="SYG-r9-H87" firstAttribute="centerY" secondItem="iZB-YP-QQP" secondAttribute="centerY" id="voh-J7-TeA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="iZB-YP-QQP" firstAttribute="leading" secondItem="Obo-iv-rrX" secondAttribute="leading" id="4o9-Qg-cjc"/>
+                <constraint firstItem="iZB-YP-QQP" firstAttribute="top" secondItem="Obo-iv-rrX" secondAttribute="top" id="R8j-3H-aF9"/>
+                <constraint firstItem="Obo-iv-rrX" firstAttribute="bottom" secondItem="iZB-YP-QQP" secondAttribute="bottom" id="m8i-y4-fYY"/>
+                <constraint firstItem="Obo-iv-rrX" firstAttribute="trailing" secondItem="iZB-YP-QQP" secondAttribute="trailing" id="oYy-WL-goV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Obo-iv-rrX"/>
+            <point key="canvasLocation" x="-131" y="-303"/>
+        </view>
+    </objects>
+</document>

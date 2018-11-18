@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D11F6B74216A0FF4002813D0 /* TextDisplayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11F6B73216A0FF4002813D0 /* TextDisplayVC.xib */; };
 		D12598722165059B0027065D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598712165059B0027065D /* AppDelegate.swift */; };
-		D12598742165059B0027065D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598732165059B0027065D /* ViewController.swift */; };
-		D12598772165059B0027065D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12598752165059B0027065D /* Main.storyboard */; };
+		D12598772165059B0027065D /* StartMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12598752165059B0027065D /* StartMenu.storyboard */; };
 		D12598792165059C0027065D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D12598782165059C0027065D /* Assets.xcassets */; };
 		D125987C2165059C0027065D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D125987A2165059C0027065D /* LaunchScreen.storyboard */; };
 		D125988521650BD20027065D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D125988421650BD20027065D /* Logger.swift */; };
@@ -17,13 +17,32 @@
 		D125988D21650DAD0027065D /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D125988C21650DAD0027065D /* TableViewDelegate.swift */; };
 		D125989321650F160027065D /* SideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D125989121650F150027065D /* SideMenuVC.xib */; };
 		D125989421650F160027065D /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D125989221650F160027065D /* SideMenuVC.swift */; };
+		D1259897216512910027065D /* NewGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1259896216512910027065D /* NewGameVC.swift */; };
+		D1259899216513090027065D /* StartMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1259898216513090027065D /* StartMenuVC.swift */; };
+		D125989C216517840027065D /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D125989B216517840027065D /* Game.storyboard */; };
+		D125989E216517AB0027065D /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D125989D216517AB0027065D /* GameVC.swift */; };
+		D12598A121651A0D0027065D /* InteractionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598A021651A0D0027065D /* InteractionMenuVC.swift */; };
+		D12598A621651DAD0027065D /* BaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598A521651DAD0027065D /* BaseDataManager.swift */; };
+		D12598A92168EAAD0027065D /* TextDisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598A82168EAAD0027065D /* TextDisplayVC.swift */; };
+		D12598AB2168ECAF0027065D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598AA2168ECAF0027065D /* Globals.swift */; };
+		D12598AE2168F6330027065D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598AD2168F6330027065D /* UIViewController.swift */; };
+		D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12598AF2169065A0027065D /* TextDisplayCell.xib */; };
+		D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12598B1216906A80027065D /* TextDisplayCell.swift */; };
+		D12E31212175EDD800DE4053 /* InteractionMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */; };
+		D12E31232175F35A00DE4053 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E31222175F35A00DE4053 /* Array.swift */; };
+		D12E3128217613CF00DE4053 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E3127217613CF00DE4053 /* MenuButton.swift */; };
+		D1747DDF21A0DE7A00A598C9 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DDE21A0DE7A00A598C9 /* InventoryView.swift */; };
+		D1747DE121A0DEB200A598C9 /* InventoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1747DE021A0DEB200A598C9 /* InventoryView.xib */; };
+		D1747DE321A0DF8F00A598C9 /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */; };
+		D1747DE521A0DFCD00A598C9 /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */; };
+		D1747DE721A0E28B00A598C9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DE621A0E28B00A598C9 /* UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D11F6B73216A0FF4002813D0 /* TextDisplayVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayVC.xib; sourceTree = "<group>"; };
 		D125986E2165059B0027065D /* Adventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D12598712165059B0027065D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D12598732165059B0027065D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D12598762165059B0027065D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D12598762165059B0027065D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StartMenu.storyboard; sourceTree = "<group>"; };
 		D12598782165059C0027065D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D125987B2165059C0027065D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D125987D2165059C0027065D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +51,25 @@
 		D125988C21650DAD0027065D /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		D125989121650F150027065D /* SideMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuVC.xib; sourceTree = "<group>"; };
 		D125989221650F160027065D /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		D1259896216512910027065D /* NewGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameVC.swift; sourceTree = "<group>"; };
+		D1259898216513090027065D /* StartMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuVC.swift; sourceTree = "<group>"; };
+		D125989B216517840027065D /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		D125989D216517AB0027065D /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		D12598A021651A0D0027065D /* InteractionMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionMenuVC.swift; sourceTree = "<group>"; };
+		D12598A521651DAD0027065D /* BaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataManager.swift; sourceTree = "<group>"; };
+		D12598A82168EAAD0027065D /* TextDisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayVC.swift; sourceTree = "<group>"; };
+		D12598AA2168ECAF0027065D /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		D12598AD2168F6330027065D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D12598AF2169065A0027065D /* TextDisplayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayCell.xib; sourceTree = "<group>"; };
+		D12598B1216906A80027065D /* TextDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayCell.swift; sourceTree = "<group>"; };
+		D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InteractionMenuVC.xib; sourceTree = "<group>"; };
+		D12E31222175F35A00DE4053 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		D12E3127217613CF00DE4053 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		D1747DDE21A0DE7A00A598C9 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		D1747DE021A0DEB200A598C9 /* InventoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryView.xib; sourceTree = "<group>"; };
+		D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
+		D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCell.swift; sourceTree = "<group>"; };
+		D1747DE621A0E28B00A598C9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +102,14 @@
 		D12598702165059B0027065D /* Adventure */ = {
 			isa = PBXGroup;
 			children = (
+				D12598AC2168F6220027065D /* Extensions */,
+				D12598A421651D800027065D /* DataManagers */,
+				D12598A221651D620027065D /* Resources */,
+				D125989A216516F60027065D /* Storyboards */,
+				D1259895216512630027065D /* ViewControllers */,
 				D125988621650C420027065D /* Common */,
 				D125988321650BB80027065D /* Utils */,
 				D12598712165059B0027065D /* AppDelegate.swift */,
-				D12598732165059B0027065D /* ViewController.swift */,
-				D12598752165059B0027065D /* Main.storyboard */,
 				D12598782165059C0027065D /* Assets.xcassets */,
 				D125987A2165059C0027065D /* LaunchScreen.storyboard */,
 				D125987D2165059C0027065D /* Info.plist */,
@@ -79,6 +120,8 @@
 		D125988321650BB80027065D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D12E31242175F8D500DE4053 /* Views */,
+				D12598AA2168ECAF0027065D /* Globals.swift */,
 				D125988421650BD20027065D /* Logger.swift */,
 			);
 			path = Utils;
@@ -87,6 +130,9 @@
 		D125988621650C420027065D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D1747DDD21A0DB2E00A598C9 /* InventoryMenu */,
+				D12598A72168EA3C0027065D /* TextDisplayView */,
+				D125989F216519E30027065D /* InteractionMenu */,
 				D125988E21650EBD0027065D /* SideMenu */,
 				D125988921650C8D0027065D /* TableView */,
 			);
@@ -109,6 +155,113 @@
 				D125989121650F150027065D /* SideMenuVC.xib */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		D1259895216512630027065D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1259896216512910027065D /* NewGameVC.swift */,
+				D1259898216513090027065D /* StartMenuVC.swift */,
+				D125989D216517AB0027065D /* GameVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D125989A216516F60027065D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D12598752165059B0027065D /* StartMenu.storyboard */,
+				D125989B216517840027065D /* Game.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D125989F216519E30027065D /* InteractionMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D12E314221769F1E00DE4053 /* MoveMenu */,
+				D12E314121769EFA00DE4053 /* InteractMenu */,
+				D12598A021651A0D0027065D /* InteractionMenuVC.swift */,
+				D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */,
+				D12E3127217613CF00DE4053 /* MenuButton.swift */,
+			);
+			path = InteractionMenu;
+			sourceTree = "<group>";
+		};
+		D12598A221651D620027065D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D12598A321651D6F0027065D /* Textfiles */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D12598A321651D6F0027065D /* Textfiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Textfiles;
+			sourceTree = "<group>";
+		};
+		D12598A421651D800027065D /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				D12598A521651DAD0027065D /* BaseDataManager.swift */,
+			);
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		D12598A72168EA3C0027065D /* TextDisplayView */ = {
+			isa = PBXGroup;
+			children = (
+				D12598A82168EAAD0027065D /* TextDisplayVC.swift */,
+				D12598AF2169065A0027065D /* TextDisplayCell.xib */,
+				D12598B1216906A80027065D /* TextDisplayCell.swift */,
+				D11F6B73216A0FF4002813D0 /* TextDisplayVC.xib */,
+			);
+			path = TextDisplayView;
+			sourceTree = "<group>";
+		};
+		D12598AC2168F6220027065D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D12598AD2168F6330027065D /* UIViewController.swift */,
+				D12E31222175F35A00DE4053 /* Array.swift */,
+				D1747DE621A0E28B00A598C9 /* UILabel.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D12E31242175F8D500DE4053 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D12E314121769EFA00DE4053 /* InteractMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InteractMenu;
+			sourceTree = "<group>";
+		};
+		D12E314221769F1E00DE4053 /* MoveMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoveMenu;
+			sourceTree = "<group>";
+		};
+		D1747DDD21A0DB2E00A598C9 /* InventoryMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D1747DDE21A0DE7A00A598C9 /* InventoryView.swift */,
+				D1747DE021A0DEB200A598C9 /* InventoryView.xib */,
+				D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */,
+				D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */,
+			);
+			path = InventoryMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +325,13 @@
 				D125987C2165059C0027065D /* LaunchScreen.storyboard in Resources */,
 				D12598792165059C0027065D /* Assets.xcassets in Resources */,
 				D125989321650F160027065D /* SideMenuVC.xib in Resources */,
-				D12598772165059B0027065D /* Main.storyboard in Resources */,
+				D1747DE121A0DEB200A598C9 /* InventoryView.xib in Resources */,
+				D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */,
+				D12E31212175EDD800DE4053 /* InteractionMenuVC.xib in Resources */,
+				D125989C216517840027065D /* Game.storyboard in Resources */,
+				D11F6B74216A0FF4002813D0 /* TextDisplayVC.xib in Resources */,
+				D1747DE321A0DF8F00A598C9 /* InventoryCell.xib in Resources */,
+				D12598772165059B0027065D /* StartMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,24 +342,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D12598742165059B0027065D /* ViewController.swift in Sources */,
+				D12598A92168EAAD0027065D /* TextDisplayVC.swift in Sources */,
+				D1259897216512910027065D /* NewGameVC.swift in Sources */,
+				D1747DE521A0DFCD00A598C9 /* InventoryCell.swift in Sources */,
 				D125988B21650CA60027065D /* TableViewDataSource.swift in Sources */,
+				D125989E216517AB0027065D /* GameVC.swift in Sources */,
 				D125989421650F160027065D /* SideMenuVC.swift in Sources */,
 				D125988521650BD20027065D /* Logger.swift in Sources */,
+				D1747DE721A0E28B00A598C9 /* UILabel.swift in Sources */,
+				D12E31232175F35A00DE4053 /* Array.swift in Sources */,
+				D12598A121651A0D0027065D /* InteractionMenuVC.swift in Sources */,
+				D12598AE2168F6330027065D /* UIViewController.swift in Sources */,
 				D12598722165059B0027065D /* AppDelegate.swift in Sources */,
+				D12598AB2168ECAF0027065D /* Globals.swift in Sources */,
 				D125988D21650DAD0027065D /* TableViewDelegate.swift in Sources */,
+				D12E3128217613CF00DE4053 /* MenuButton.swift in Sources */,
+				D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */,
+				D1747DDF21A0DE7A00A598C9 /* InventoryView.swift in Sources */,
+				D12598A621651DAD0027065D /* BaseDataManager.swift in Sources */,
+				D1259899216513090027065D /* StartMenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D12598752165059B0027065D /* Main.storyboard */ = {
+		D12598752165059B0027065D /* StartMenu.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D12598762165059B0027065D /* Base */,
 			);
-			name = Main.storyboard;
+			name = StartMenu.storyboard;
 			sourceTree = "<group>";
 		};
 		D125987A2165059C0027065D /* LaunchScreen.storyboard */ = {
