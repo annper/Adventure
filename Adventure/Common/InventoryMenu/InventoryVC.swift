@@ -19,7 +19,7 @@ protocol InventoryDelegate {
 class InventoryVC: UIViewController {
   
   // MARK: - Private properties
-  
+    
   /// Background colour of the inventory. Defaults to blue
   private var bgColor: UIColor = UIColor.blue
   
@@ -28,6 +28,15 @@ class InventoryVC: UIViewController {
   
   /// Font of the text in the inventory
   private var font: UIFont = UIFont(name: "Rockwell-Regular", size: 17)!
+  
+  // MKAR: - Init
+  
+  convenience init(bgColor: UIColor, textColor: UIColor, font: UIFont?) {
+    self.init()
+    self.bgColor = bgColor
+    self.textColor = textColor
+    self.font = font ?? self.font
+  }
   
   // MARK: -  Delegate properties
   
@@ -88,14 +97,21 @@ class InventoryVC: UIViewController {
     }
   }
   
-  // MKAR: - Init
+}
+
+// MARK: - InventoryVC access API
+
+extension InventoryVC {
   
-  convenience init(bgColor: UIColor, textColor: UIColor, font: UIFont?) {
-    self.init()
-    self.bgColor = bgColor
-    self.textColor = textColor
-    self.font = font ?? self.font
+  func setAvailableItemCategories() {
+    
   }
+  
+  func assignDefaultImageForCategory(image: UIImage?, category: String) {
+    
+  }
+  
+  
   
 }
 

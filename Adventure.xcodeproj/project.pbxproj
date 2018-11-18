@@ -36,6 +36,7 @@
 		D1747DE321A0DF8F00A598C9 /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */; };
 		D1747DE521A0DFCD00A598C9 /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */; };
 		D1747DE721A0E28B00A598C9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DE621A0E28B00A598C9 /* UILabel.swift */; };
+		D1747DE921A1F53600A598C9 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DE821A1F53600A598C9 /* InventoryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
 		D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCell.swift; sourceTree = "<group>"; };
 		D1747DE621A0E28B00A598C9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		D1747DE821A1F53600A598C9 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				D1747DE021A0DEB200A598C9 /* InventoryVC.xib */,
 				D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */,
 				D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */,
+				D1747DE821A1F53600A598C9 /* InventoryItem.swift */,
 			);
 			path = InventoryMenu;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				D12598AB2168ECAF0027065D /* Globals.swift in Sources */,
 				D125988D21650DAD0027065D /* TableViewDelegate.swift in Sources */,
 				D12E3128217613CF00DE4053 /* MenuButton.swift in Sources */,
+				D1747DE921A1F53600A598C9 /* InventoryItem.swift in Sources */,
 				D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */,
 				D1747DDF21A0DE7A00A598C9 /* InventoryVC.swift in Sources */,
 				D12598A621651DAD0027065D /* BaseDataManager.swift in Sources */,
