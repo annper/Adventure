@@ -29,6 +29,12 @@ extension Globals {
     
     /// UIColor.black (#000000)
     static let mainBackground: UIColor = UIColor.black
+    
+    /// Light blue (#5EC2FF)
+    static let inventoryBlue: UIColor = UIColor(red: 0.369, green: 0.761, blue: 1.000, alpha: 1)
+    
+    /// Light green (#09C593)
+    static let inventoryGreen: UIColor = UIColor(red: 0.035, green: 0.773, blue: 0.576, alpha: 1)
   }
   
 }

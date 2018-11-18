@@ -39,5 +39,5 @@ class TableViewDataSource<Model>: NSObject,  UITableViewDataSource {
     
     return cell
   }
-  
+
 }

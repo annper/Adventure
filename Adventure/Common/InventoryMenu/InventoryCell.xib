@@ -48,7 +48,7 @@
                     <constraint firstItem="cOe-iv-dwt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="clz-QF-iz6" secondAttribute="trailing" constant="5" id="xm3-PJ-0em"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imageView" destination="cMN-Tq-iMY" id="Pga-Jc-jwm"/>
                 <outlet property="imgView" destination="cMN-Tq-iMY" id="lOx-GZ-Da6"/>

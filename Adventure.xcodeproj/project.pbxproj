@@ -31,8 +31,8 @@
 		D12E31212175EDD800DE4053 /* InteractionMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */; };
 		D12E31232175F35A00DE4053 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E31222175F35A00DE4053 /* Array.swift */; };
 		D12E3128217613CF00DE4053 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E3127217613CF00DE4053 /* MenuButton.swift */; };
-		D1747DDF21A0DE7A00A598C9 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DDE21A0DE7A00A598C9 /* InventoryView.swift */; };
-		D1747DE121A0DEB200A598C9 /* InventoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1747DE021A0DEB200A598C9 /* InventoryView.xib */; };
+		D1747DDF21A0DE7A00A598C9 /* InventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DDE21A0DE7A00A598C9 /* InventoryVC.swift */; };
+		D1747DE121A0DEB200A598C9 /* InventoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1747DE021A0DEB200A598C9 /* InventoryVC.xib */; };
 		D1747DE321A0DF8F00A598C9 /* InventoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */; };
 		D1747DE521A0DFCD00A598C9 /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */; };
 		D1747DE721A0E28B00A598C9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1747DE621A0E28B00A598C9 /* UILabel.swift */; };
@@ -65,8 +65,8 @@
 		D12E31202175EDD800DE4053 /* InteractionMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InteractionMenuVC.xib; sourceTree = "<group>"; };
 		D12E31222175F35A00DE4053 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		D12E3127217613CF00DE4053 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		D1747DDE21A0DE7A00A598C9 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
-		D1747DE021A0DEB200A598C9 /* InventoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryView.xib; sourceTree = "<group>"; };
+		D1747DDE21A0DE7A00A598C9 /* InventoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryVC.swift; sourceTree = "<group>"; };
+		D1747DE021A0DEB200A598C9 /* InventoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryVC.xib; sourceTree = "<group>"; };
 		D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryCell.xib; sourceTree = "<group>"; };
 		D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCell.swift; sourceTree = "<group>"; };
 		D1747DE621A0E28B00A598C9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -256,8 +256,8 @@
 		D1747DDD21A0DB2E00A598C9 /* InventoryMenu */ = {
 			isa = PBXGroup;
 			children = (
-				D1747DDE21A0DE7A00A598C9 /* InventoryView.swift */,
-				D1747DE021A0DEB200A598C9 /* InventoryView.xib */,
+				D1747DDE21A0DE7A00A598C9 /* InventoryVC.swift */,
+				D1747DE021A0DEB200A598C9 /* InventoryVC.xib */,
 				D1747DE221A0DF8F00A598C9 /* InventoryCell.xib */,
 				D1747DE421A0DFCD00A598C9 /* InventoryCell.swift */,
 			);
@@ -325,7 +325,7 @@
 				D125987C2165059C0027065D /* LaunchScreen.storyboard in Resources */,
 				D12598792165059C0027065D /* Assets.xcassets in Resources */,
 				D125989321650F160027065D /* SideMenuVC.xib in Resources */,
-				D1747DE121A0DEB200A598C9 /* InventoryView.xib in Resources */,
+				D1747DE121A0DEB200A598C9 /* InventoryVC.xib in Resources */,
 				D12598B02169065A0027065D /* TextDisplayCell.xib in Resources */,
 				D12E31212175EDD800DE4053 /* InteractionMenuVC.xib in Resources */,
 				D125989C216517840027065D /* Game.storyboard in Resources */,
@@ -358,7 +358,7 @@
 				D125988D21650DAD0027065D /* TableViewDelegate.swift in Sources */,
 				D12E3128217613CF00DE4053 /* MenuButton.swift in Sources */,
 				D12598B2216906A80027065D /* TextDisplayCell.swift in Sources */,
-				D1747DDF21A0DE7A00A598C9 /* InventoryView.swift in Sources */,
+				D1747DDF21A0DE7A00A598C9 /* InventoryVC.swift in Sources */,
 				D12598A621651DAD0027065D /* BaseDataManager.swift in Sources */,
 				D1259899216513090027065D /* StartMenuVC.swift in Sources */,
 			);

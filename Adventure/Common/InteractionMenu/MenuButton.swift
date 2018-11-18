@@ -34,6 +34,25 @@ class MenuButton: UIButton {
     let padding: CGFloat = 12
     self.contentEdgeInsets = UIEdgeInsetsMake(padding, padding, padding, padding)
     
+    self.setTitleColor(UIColor.lightGray, for: .disabled)
+  }
+  
+}
+
+extension MenuButton {
+  
+  /// Disable user interaction and set the title and border colour to light gray
+  func disable() {
+    self.isUserInteractionEnabled = false
+    self.isEnabled = false
+    self.layer.borderColor = self.titleColor(for: .disabled)?.cgColor
+  }
+  
+  /// Allow user interaction and update the title and border colour
+  func enable() {
+    self.isUserInteractionEnabled = true
+    self.isEnabled = true
+    self.layer.borderColor = self.titleColor(for: .normal)?.cgColor
   }
   
 }

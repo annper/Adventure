@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +21,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbd-Fb-LZH">
                                 <rect key="frame" x="0.0" y="20" width="375" height="447"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iy2-Gq-E4b">
+                                <rect key="frame" x="0.0" y="467" width="375" height="447"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.1960784314" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-7P-CJ6">
                                 <rect key="frame" x="0.0" y="467" width="375" height="200"/>
@@ -38,11 +42,18 @@
                             <constraint firstItem="OIa-xQ-REL" firstAttribute="trailing" secondItem="5ie-7P-CJ6" secondAttribute="trailing" id="IDa-mS-049"/>
                             <constraint firstItem="5ie-7P-CJ6" firstAttribute="leading" secondItem="OIa-xQ-REL" secondAttribute="leading" id="Mx8-kh-fsS"/>
                             <constraint firstItem="OIa-xQ-REL" firstAttribute="trailing" secondItem="nbd-Fb-LZH" secondAttribute="trailing" id="ROD-Gc-jFy"/>
-                            <constraint firstItem="5ie-7P-CJ6" firstAttribute="bottom" secondItem="OIa-xQ-REL" secondAttribute="bottom" id="g2v-en-poh"/>
+                            <constraint firstItem="Iy2-Gq-E4b" firstAttribute="height" secondItem="nbd-Fb-LZH" secondAttribute="height" id="ZcR-vT-DNP"/>
+                            <constraint firstItem="Iy2-Gq-E4b" firstAttribute="leading" secondItem="OIa-xQ-REL" secondAttribute="leading" id="cSc-iI-Kaa"/>
+                            <constraint firstItem="Iy2-Gq-E4b" firstAttribute="top" secondItem="nbd-Fb-LZH" secondAttribute="top" constant="447" id="dOJ-01-CMe"/>
+                            <constraint firstItem="5ie-7P-CJ6" firstAttribute="bottom" secondItem="XLH-8F-NSE" secondAttribute="bottom" id="g2v-en-poh"/>
+                            <constraint firstItem="Iy2-Gq-E4b" firstAttribute="trailing" secondItem="OIa-xQ-REL" secondAttribute="trailing" id="oYA-Ys-6gG"/>
+                            <constraint firstItem="Iy2-Gq-E4b" firstAttribute="width" secondItem="nbd-Fb-LZH" secondAttribute="width" id="s3S-2q-R6h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OIa-xQ-REL"/>
                     </view>
                     <connections>
+                        <outlet property="inventoryContainerView" destination="Iy2-Gq-E4b" id="hUm-TS-oIM"/>
+                        <outlet property="inventoryContainerViewTopConstraint" destination="dOJ-01-CMe" id="0qk-mQ-CY3"/>
                         <outlet property="menuContainerView" destination="5ie-7P-CJ6" id="kWY-2b-spf"/>
                         <outlet property="storyContainerView" destination="nbd-Fb-LZH" id="bAb-gF-1SV"/>
                     </connections>

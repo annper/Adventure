@@ -79,7 +79,7 @@
             <constraints>
                 <constraint firstItem="iZB-YP-QQP" firstAttribute="leading" secondItem="Obo-iv-rrX" secondAttribute="leading" id="4o9-Qg-cjc"/>
                 <constraint firstItem="iZB-YP-QQP" firstAttribute="top" secondItem="Obo-iv-rrX" secondAttribute="top" id="R8j-3H-aF9"/>
-                <constraint firstItem="Obo-iv-rrX" firstAttribute="bottom" secondItem="iZB-YP-QQP" secondAttribute="bottom" id="m8i-y4-fYY"/>
+                <constraint firstAttribute="bottom" secondItem="iZB-YP-QQP" secondAttribute="bottom" id="m8i-y4-fYY"/>
                 <constraint firstItem="Obo-iv-rrX" firstAttribute="trailing" secondItem="iZB-YP-QQP" secondAttribute="trailing" id="oYy-WL-goV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -17,10 +17,23 @@ import UIKit
 
 class GameVC: UIViewController {
   
+  // MARK: - Private properties
+  
+  private let screenHeight: CGFloat = UIScreen.main.bounds.height
+  
+  // MARK: - IBOutlets
+  
   @IBOutlet var storyContainerView: UIView!
+  
+  @IBOutlet var inventoryContainerView: UIView!
+  
+  @IBOutlet var inventoryContainerViewTopConstraint: NSLayoutConstraint! { didSet {
+    self.inventoryContainerViewTopConstraint.constant = screenHeight
+  }}
   
   @IBOutlet var menuContainerView: UIView!
   
+  // Test stuff, currently unused
   @IBOutlet var testtextField: UITextField!
   private lazy var textDisplayVC: TextDisplayVC = {
     let temp = TextDisplayVC(typePace: 0.01, font: UIFont(name: "HelveticaNeue-Thin", size: 14)!, textColor: Globals.Color.mainText, backgroundColor: Globals.Color.mainBackground)
@@ -28,11 +41,25 @@ class GameVC: UIViewController {
     return temp
   }()
   
+  // MARK: - Initialise plugin VCs
+  
   private lazy var interactionMenuVC: InteractionMenuVC = {
     let temp = InteractionMenuVC(bgColor: Globals.Color.menuBackground)
     
+    temp.inventoryDelegate = self
+    
     return temp
   }()
+  
+  private lazy var inventoryMenu: InventoryVC = {
+    let temp = InventoryVC(bgColor: Globals.Color.inventoryGreen, textColor: UIColor.white, font: nil)
+    
+    temp.delegate = self
+    
+    return temp
+  }()
+  
+  // MARK: - IBActions
   
   @IBAction func didTapTestButton(_ sender: Any) {
     Logger.info("didTapTestButton")
@@ -41,11 +68,15 @@ class GameVC: UIViewController {
     textDisplayVC.display(text)
     
   }
+  
+  // MARK: - UIViewController
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     Logger.info("GameVC")
     add(textDisplayVC, to: storyContainerView)
+    add(inventoryMenu, to: inventoryContainerView)
     add(interactionMenuVC, to: menuContainerView)
   }
   
@@ -57,7 +88,6 @@ class GameVC: UIViewController {
     super.didReceiveMemoryWarning()
     Logger.warn("didReceiveMemoryWarning")
   }
-  
   
   /*
    // MARK: - Navigation
@@ -71,14 +101,52 @@ class GameVC: UIViewController {
   
 }
 
+// MARK: - InteractionMenu InventoryDelegate
+
 extension GameVC: InteractionMenuInventoryDelegate {
   
   func didOpenInventory() {
+    self.animateOpenInventory(withDuration: 0.3) {
+      self.interactionMenuVC.disable(.all)
+    }
+//    self.interactionMenuVC.disable(.all)
+//    self.interactionMenuVC.disable(.inventory)
+  }
+  
+  private func animateOpenInventory(withDuration delay: TimeInterval, onComplete: (() -> Void)? = nil) {
+    
+    self.inventoryContainerViewTopConstraint.constant = 0
+    
+    UIView.animate(withDuration: delay, animations: {
+      self.view.layoutIfNeeded()
+    }) { (_) in
+      if let complete = onComplete {
+        complete()
+      }
+    }
     
   }
   
-  func didCloseInventory() {
-    
+}
+
+extension GameVC: InventoryDelegate {
+  
+  func didExit() {
+    self.animateExitInventory(withDuration: 0.3) {
+      self.interactionMenuVC.enable(.all)
+    }
   }
   
+  private func animateExitInventory(withDuration delay: TimeInterval, onComplete: (() -> Void)? = nil) {
+    self.inventoryContainerViewTopConstraint.constant = self.screenHeight
+    
+    
+    UIView.animate(withDuration: delay, animations: {
+      self.view.layoutIfNeeded()
+    }) { (_) in
+      if let complete = onComplete {
+        complete()
+      }
+    }
+  }
 }

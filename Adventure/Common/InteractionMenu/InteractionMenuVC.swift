@@ -19,7 +19,6 @@ protocol InteractionMenuDirectionsDelegate {
 
 protocol InteractionMenuInventoryDelegate {
   func didOpenInventory()
-  func didCloseInventory()
 }
 
 protocol InteractionMenuActionDelegate {
@@ -183,47 +182,59 @@ extension InteractionMenuVC {
 
 }
 
+// MARK: - API to manage main menu button state
+
+extension InteractionMenuVC {
+  
+  /// Disable on of the main menu buttons
+  func disable(_ option: MainMenuOption) {
+    
+    let buttons = self.getMainMenuButtons(for: option)
+    buttons.forEach { (button) in
+      button.disable()
+    }
+  }
+  
+  /// Enable one of the main menu buttons
+  func enable(_ option: MainMenuOption) {
+    let buttons = self.getMainMenuButtons(for: option)
+    buttons.forEach { (button) in
+      button.enable()
+    }
+  }
+  
+//  func enable(_ [])
+}
+
 // MARK: - Remove/Add main menu buttons
 
 extension InteractionMenuVC {
   
   /// Remove one of the main manu buttons from the menu
   func removeMainMenuOption(_ option: MainMenuOption) {
-    var button: UIButton
+    let buttons = self.getMainMenuButtons(for: option)
     
-    switch option {
-    case .interact:
-      button = self.interactButton
-    case .inventory:
-      button = self.inventoryButton
-    case .move:
-      button = self.moveButton
+    buttons.forEach { (button) in
+      self.mainMenuStackView.removeArrangedSubview(button)
+      button.removeFromSuperview()
     }
-    
-    self.mainMenuStackView.removeArrangedSubview(button)
-    button.removeFromSuperview()
     
     self.mainMenuStackView.distribution = .fillEqually
     self.mainMenuStackView.spacing = 15
   }
   
-  /// Add one of the main menu options to the menu. If adding back a button thats already there it will simply be ignored. This method can also be used as a way to rearrange the orde rin which the options appear on the menu.
+  /// Add one of the main menu options to the menu. If adding back a button thats already there it will simply be ignored. This method can also be used as a way to rearrange the order in which the options appear on the menu.
   /// - parameter option: The menu option to add
   /// - parameter atIndex: Provide this if you want to rearrange the buttons. The default order is: Interact, Inventory, Move
   func addMainMenuOption(_ option: MainMenuOption, atIndex index: Int? = nil) {
-    var button: UIButton
+    let buttons = self.getMainMenuButtons(for: option)
     
-    switch option {
-    case .interact:
-      button = self.interactButton
-    case .inventory:
-      button = self.inventoryButton
-    case .move:
-      button = self.moveButton
+    var stackViewIndex = index ?? option.rawValue
+    
+    buttons.forEach { (button) in
+      self.mainMenuStackView.insertArrangedSubview(button, at: stackViewIndex)
+      stackViewIndex += 1
     }
-    
-    let stackViewIndex = index ?? option.rawValue
-    self.mainMenuStackView.insertArrangedSubview(button, at: stackViewIndex)
     
     if self.mainMenuStackView.arrangedSubviews.count >= 3 {
       self.mainMenuStackView.distribution = .equalSpacing
@@ -235,6 +246,7 @@ extension InteractionMenuVC {
     case interact = 0
     case inventory
     case move
+    case all
   }
   
 }
@@ -255,13 +267,28 @@ internal extension InteractionMenuVC {
   }
   
   /// Show all the main buttons on the main menu. This also hides the close button
-  private func showMainMenuButton() {
+  private func showMainMenuButtons() {
     self.allButtons.forEach { (button) in
       if let mainMenuButton = button as? MainMenuButton {
         mainMenuButton.isHidden = false
       }
     }
+  }
   
+  /// Return the MainMenuButton corresponding to the menu option
+  /// - parameter option: The MainMenuOption for the button to be returned
+  /// - returns: A MainMenuButton
+  private func getMainMenuButtons(for option: MainMenuOption) -> [MainMenuButton] {
+    switch option {
+    case .interact:
+      return [self.interactButton]
+    case .inventory:
+      return [self.inventoryButton]
+    case .move:
+      return [self.moveButton]
+    case .all:
+      return [self.interactButton, self.inventoryButton, self.moveButton]
+    }
   }
   
 }

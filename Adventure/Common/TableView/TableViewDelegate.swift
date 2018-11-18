@@ -15,6 +15,9 @@ class TableViewDelegate<Model>: NSObject, UITableViewDelegate {
   private let didSelectRowAction: DidSelectRow
   private let didEndScrollingAction: DidEndScrolling
   
+  /// The height of a call. Defaults to 40
+  var rowHeight: CGFloat = 40
+  
   init(selectedRow: @escaping DidSelectRow, endedScrolling: @escaping DidEndScrolling) {
     self.didSelectRowAction = selectedRow
     self.didEndScrollingAction = endedScrolling
@@ -34,5 +37,9 @@ class TableViewDelegate<Model>: NSObject, UITableViewDelegate {
   func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
     
     didEndScrollingAction()
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return self.rowHeight
   }
 }
