@@ -103,15 +103,17 @@ class InventoryVC: UIViewController {
 
 extension InventoryVC {
   
-  func setAvailableItemCategories() {
+  func fillInventory(with items: [InventoryItem]) {
+    
+  }
+  
+  func setAvailableItemCategories(_ categories: [InventoryCategory]) {
     
   }
   
   func assignDefaultImageForCategory(image: UIImage?, category: String) {
     
   }
-  
-  
   
 }
 
